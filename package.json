@@ -1,33 +1,49 @@
 {
-  "name": "botbuilder-adapter-slack-fork",
-  "version": "1.0.1",
-  "description": "fork for usage until update of the main library",
-  "main": "index.js",
+  "name": "botbuilder-adapter-slack",
+  "version": "1.0.11",
+  "description": "Connect Botkit or BotBuilder to Slack",
+  "main": "./lib/index.js",
+  "typings": "./lib/index.d.ts",
+  "files": [
+    "/lib",
+    "/src"
+  ],
   "scripts": {
-    "postinstall": "lerna bootstrap --hoist",
-    "build": "lerna run build",
-    "test": "lerna run build ; lerna run test",
-    "build-docs": "lerna run build-docs",
-    "eslint": "./node_modules/.bin/eslint  ./packages/*/src/*.ts ./packages/*/src/**/*.ts",
-    "eslint-fix": "./node_modules/.bin/eslint  ./packages/*/src/*.ts ./packages/*/src/**/*.ts --fix"
+    "build": "tsc",
+    "test": "tsc ; nyc mocha tests/*.tests.js",
+    "eslint": "./node_modules/.bin/eslint --fix src/*"
+  },
+  "author": "Microsoft Corp.",
+  "license": "MIT",
+  "keywords": [
+    "slack",
+    "botkit",
+    "botbuilder",
+    "botframework",
+    "bots",
+    "chatbots",
+    "azure"
+  ],
+  "homepage": "https://github.com/howdyai/botkit/blob/master/packages/botbuilder-adapter-slack#readme",
+  "bugs": {
+    "url": "https://github.com/howdyai/botkit/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AymericHENRY/botbuilder-zest-fork.git"
+    "url": "https://github.com/howdyai/botkit.git"
   },
-  "author": "aymeric_zest",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/AymericHENRY/botbuilder-zest-fork/issues"
+  "dependencies": {
+    "@slack/web-api": "^5.8.0",
+    "botbuilder": "^4.9.0",
+    "botkit": "^4.9.0",
+    "debug": "^4.1.0"
   },
-  "homepage": "https://github.com/AymericHENRY/botbuilder-zest-fork#readme",
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^2.17.0",
-    "@typescript-eslint/parser": "^2.17.0",
     "eslint": "^6.8.0",
-    "lerna": "^3.21.0",
-    "mocha": "^7.1.2",
-    "nyc": "^15.0.1",
-    "typescript": "^3.7.5"
+    "eslint-config-standard": "^14.1.0",
+    "eslint-plugin-import": "^2.20.0",
+    "eslint-plugin-node": "^11.0.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1"
   }
 }
