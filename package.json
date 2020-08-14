@@ -1,6 +1,6 @@
 {
   "name": "botbuilder-adapter-slack-fork",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "fork for usage until update of the main library",
   "main": "index.js",
   "scripts": {
